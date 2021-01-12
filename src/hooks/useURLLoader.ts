@@ -8,7 +8,6 @@ const getPhoto = (url: string) => {
 
   onMounted(async() => {
     await axios.get(url).then((response) => {
-      console.log(1, response);
       data.formData = response.data;
     }).catch((error) => {
       console.log(error);
