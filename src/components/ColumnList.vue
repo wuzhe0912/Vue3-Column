@@ -1,6 +1,10 @@
 <template lang="pug">
-.column-wrap
-  div column
+ul
+  li(v-for="node in list" :key="node.id")
+    img(:src="node.avatar" :alt="node.title")
+    h4 {{ node.title }}
+    p {{ node.description }}
+    a(href="#") move to column
 </template>
 
 <script lang="ts">
