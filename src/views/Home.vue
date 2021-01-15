@@ -1,5 +1,5 @@
 <template lang="pug">
-.home-wrap
+.container
   ColumnList(:list="formData")
 </template>
 

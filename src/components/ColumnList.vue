@@ -1,10 +1,11 @@
 <template lang="pug">
-ul
-  li(v-for="node in list" :key="node.id")
-    img(:src="node.avatar" :alt="node.title")
-    h4 {{ node.title }}
-    p {{ node.description }}
-    a(href="#") move to column
+ul(class="row")
+  li(class="col-4 card", v-for="item in list", :key="item.id")
+    img(class="card-img-top", :src="item.avatar", :alt="item.title")
+    div(class="card-body")
+      h5(class="card-title") {{ item.title }}
+      p(class="card-text") {{ item.description }}
+      a(class="btn btn-primary", href="#") Go Column
 </template>
 
 <script lang="ts">
