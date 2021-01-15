@@ -1,11 +1,12 @@
 <template lang="pug">
 ul(class="row")
-  li(class="col-4 card", v-for="item in list", :key="item.id")
-    img(class="card-img-top", :src="item.avatar", :alt="item.title")
-    div(class="card-body")
-      h5(class="card-title") {{ item.title }}
-      p(class="card-text") {{ item.description }}
-      a(class="btn btn-primary", href="#") Go Column
+  li(class="col-4", v-for="item in list", :key="item.id")
+    div(class="card h-100 shadow-sm")
+      div(class="card-body text-center")
+        img(class="rounded-circle border border-light w-25 my-3" :src="item.avatar", :alt="item.title")
+        h5(class="card-title") {{ item.title }}
+        p(class="card-text") {{ item.description }}
+        a(class="btn btn-primary", href="#") Go Column
 </template>
 
 <script lang="ts">
@@ -33,4 +34,8 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card-text {
+  color: $red;
+}
+</style>
