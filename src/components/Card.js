@@ -1,17 +1,12 @@
 import React from 'react';
+import '../Styles/Card.css';
 
 function Card({ data }) {
   const { name, image_url } = data;
 
   return (
-    <div className='card-wrapper max-w-sm overflow-hidden rounded shadow-lg'>
-      <div className='h-52'>
-        <img
-          src={image_url}
-          alt={name}
-          className='h-full w-full object-cover'
-        />
-      </div>
+    <div className='card-item rounded-xl p-3'>
+      <img src={image_url} alt={name} className='object-fit mb-2 h-52 w-full' />
       <h2>{name}</h2>
     </div>
   );
