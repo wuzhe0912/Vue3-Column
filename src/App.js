@@ -19,24 +19,24 @@ function App() {
   };
 
   const filterTags = () => {
-    let filterArray = [];
+    const filterList = new Set();
+    const repeatList = new Set();
     const cloneData = Data;
     cloneData.forEach((node) => {
-      filterArray.push(node.filterTag);
+      filterList.has(node.filterTag)
+        ? repeatList.add(node.filterTag)
+        : filterList.add(node.filterTag);
     });
-    console.log(1, filterArray);
-    setFiltered(filterArray);
+    setFiltered(filterList);
   };
 
   return (
     <div className='app'>
       <header>
-        <h1 className='px-4 py-2 text-3xl sm:px-8 sm:py-3'>
-          Pitt Wu's Showcase App
-        </h1>
+        <h1 className='px-4 py-2 text-3xl sm:px-8 sm:py-3'>Showcase App</h1>
       </header>
       <main className='container mx-auto mt-10'>
-        <Filter></Filter>
+        <Filter filtered={filtered} />
         <div className='card-wrapper grid gap-4 px-10 py-4'>
           {caseData.map((item) => {
             return <Card key={item.name} data={item}></Card>;

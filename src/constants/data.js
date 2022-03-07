@@ -28,7 +28,7 @@ const data = [
   {
     filterTag: 'React',
     tags: ['React', 'Styled Components'],
-    name: 'Todos App(React)',
+    name: 'Todos App',
     image_url: 'https://i.imgur.com/ND42RNK.gif',
     link_url: 'https://todos-app-react.vercel.app',
     source_code: 'https://github.com/wuzhe0912/todos-app-react',
