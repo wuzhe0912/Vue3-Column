@@ -18,7 +18,7 @@ const data = [
   },
   {
     filterTag: 'Vue',
-    tags: ['Vue.js 3.x', 'Tailwind CSS', 'Leaflet'],
+    tags: ['Vue', 'Tailwind CSS', 'Leaflet'],
     name: 'IP Address Tracker',
     image_url:
       'https://raw.githubusercontent.com/wuzhe0912/image-save/master/20211228/ip-tracker-vue3.190qettga5r4.webp',
