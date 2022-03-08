@@ -7,6 +7,8 @@ import Filter from './components/Filter';
 function App() {
   const [caseData, setCaseData] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  const [tagList, setTagList] = useState([]);
+  const [actived, setActived] = useState('All');
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -16,6 +18,19 @@ function App() {
   const fetchData = () => {
     setCaseData(Data);
     setFiltered(Data);
+    getTagList();
+  };
+
+  const getTagList = () => {
+    const filterList = new Set();
+    const repeatList = new Set();
+    const cloneData = Data;
+    cloneData.forEach((node) => {
+      filterList.has(node.filterTag)
+        ? repeatList.add(node.filterTag)
+        : filterList.add(node.filterTag);
+    });
+    setTagList(filterList);
   };
 
   return (
@@ -25,9 +40,11 @@ function App() {
       </header>
       <main className='container mx-auto mt-10'>
         <Filter
-          filtered={filtered}
           caseData={caseData}
-          setCaseData={setCaseData}
+          setFiltered={setFiltered}
+          actived={actived}
+          setActived={setActived}
+          tagList={tagList}
         />
         <div className='card-wrapper grid gap-4 px-10 py-4'>
           {caseData.map((item) => {
