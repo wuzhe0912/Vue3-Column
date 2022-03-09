@@ -7,7 +7,13 @@ function Card({ data }) {
   const { name, image_url, tags, link_url, source_code } = data;
 
   return (
-    <motion.div layout className='card-item rounded-xl p-3'>
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      className='card-item rounded-xl p-3'
+    >
       <h2 className='mb-2 font-bold'>{name}</h2>
       <img
         src={image_url}

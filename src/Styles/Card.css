@@ -7,7 +7,6 @@
 .card-item:hover {
   transition: var(--transition);
   box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
-  transform: scale(1.02);
 }
 
 .link-icon {

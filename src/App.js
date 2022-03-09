@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Data from './constants/data';
 import Card from './components/Card';
 import Filter from './components/Filter';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [caseData, setCaseData] = useState([]);
@@ -41,7 +41,7 @@ function App() {
       <header>
         <h1 className='px-4 py-2 text-3xl sm:px-8 sm:py-3'>Showcase App</h1>
       </header>
-      <main className='container mx-auto mt-10'>
+      <main className='container mx-auto mt-10 min-h-screen'>
         <Filter
           caseData={caseData}
           setFiltered={setFiltered}
@@ -50,9 +50,11 @@ function App() {
           tagList={tagList}
         />
         <motion.div layout className='card-wrapper grid gap-4 px-10 py-4'>
-          {filtered.map((item) => {
-            return <Card key={item.name} data={item}></Card>;
-          })}
+          <AnimatePresence>
+            {filtered.map((item) => {
+              return <Card key={item.name} data={item}></Card>;
+            })}
+          </AnimatePresence>
         </motion.div>
       </main>
       <footer className='mt-10 px-4 py-2 text-center sm:px-8 sm:py-3'>
