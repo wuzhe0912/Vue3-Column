@@ -1,7 +1,18 @@
-# Pitt Wu's Showcase App
+# Showcase App
 
-## features
+> Use React build showcase app to list my project.
 
-- [ ] case list
-- [ ] filter
-- [ ] filter animation
+## preview
+
+> [Link](https://showcase-app-react.vercel.app/)
+
+## feature
+
+- [x] ~~case list~~
+- [x] ~~filter~~
+- [x] ~~filter animation~~
+
+## frameworks or libraries
+
+- React
+- Motion
