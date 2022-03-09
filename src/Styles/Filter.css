@@ -1,7 +1,7 @@
 .filter-wrapper button {
   border: none;
   background: #fff;
-  color: rgb(65, 98, 168);
+  color: var(--blue);
   border-radius: 1rem;
   border: 1px solid var(--white);
   font-weight: bold;
@@ -10,6 +10,6 @@
 }
 
 button.active {
-  background: rgb(65, 98, 168);
+  background: var(--blue);
   color: #fff;
 }

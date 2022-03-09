@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import '../Styles/Filter.css';
 
 function Filter({ caseData, setFiltered, actived, setActived, tagList }) {
@@ -7,24 +7,12 @@ function Filter({ caseData, setFiltered, actived, setActived, tagList }) {
       setFiltered(caseData);
       return;
     }
+    const filtered = caseData.filter((item) => item.tags.includes(actived));
+    setFiltered(filtered);
   }, [actived, caseData, setFiltered]);
-
-  // const selectTag = (value) => {
-  //   setActived(value);
-  // };
-
-  // useEffect(() => {
-  //   filterList(actived);
-  // }, [actived]);
 
   return (
     <div className='filter-wrapper px-10'>
-      <button
-        className={`btn mr-1 px-4 py-1 ${actived === 'All' ? 'active' : null}`}
-        onClick={() => setActived('All')}
-      >
-        All
-      </button>
       {tagList.map((filter, index) => {
         return (
           <button

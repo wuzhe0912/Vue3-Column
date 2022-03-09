@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Data from './constants/data';
 import Card from './components/Card';
 import Filter from './components/Filter';
+import { motion } from 'framer-motion';
 
 function App() {
   const [caseData, setCaseData] = useState([]);
@@ -25,12 +26,14 @@ function App() {
     const filterList = new Set();
     const repeatList = new Set();
     const cloneData = Data;
+    filterList.add('All');
     cloneData.forEach((node) => {
       filterList.has(node.filterTag)
         ? repeatList.add(node.filterTag)
         : filterList.add(node.filterTag);
     });
-    setTagList(filterList);
+    const convertArray = Array.from(filterList);
+    setTagList(convertArray);
   };
 
   return (
@@ -46,11 +49,11 @@ function App() {
           setActived={setActived}
           tagList={tagList}
         />
-        <div className='card-wrapper grid gap-4 px-10 py-4'>
-          {caseData.map((item) => {
+        <motion.div layout className='card-wrapper grid gap-4 px-10 py-4'>
+          {filtered.map((item) => {
             return <Card key={item.name} data={item}></Card>;
           })}
-        </div>
+        </motion.div>
       </main>
       <footer className='mt-10 px-4 py-2 text-center sm:px-8 sm:py-3'>
         Copyright &copy; {currentYear}
