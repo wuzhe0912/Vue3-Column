@@ -17,6 +17,14 @@ const data = [
     source_code: 'https://github.com/wuzhe0912/blog-docusaurus',
   },
   {
+    filterTag: 'React',
+    tags: ['React', 'Chart.js', 'puppeteer'],
+    name: 'Forntend Jobs Data Visualization(2021)',
+    image_url: 'https://i.imgur.com/s4SjNiZ.png',
+    link_url: 'https://frontend-jobs-datavision.netlify.app/#/login',
+    source_code: 'https://github.com/wuzhe0912/frontend-job-react',
+  },
+  {
     filterTag: 'Vue',
     tags: ['Vue', 'Tailwind CSS', 'Leaflet'],
     name: 'IP Address Tracker',
@@ -27,7 +35,7 @@ const data = [
   },
   {
     filterTag: 'React',
-    tags: ['React', 'Styled Components'],
+    tags: ['React', 'styled-components'],
     name: 'Todos App',
     image_url: 'https://i.imgur.com/ND42RNK.gif',
     link_url: 'https://todos-app-react.vercel.app',
